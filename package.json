@@ -1,0 +1,44 @@
+{
+  "name": "multisig-hardhat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "commit": "git-cz",
+    "coverage": "npx hardhat coverage --testfiles 'test/*.js' ",
+    "server": "npx hardhat node",
+    "clean": "npx hardhat clean",
+    "compile": "npx hardhat compile",
+    "test": "hardhat test --network hardhat",
+    "run": "npx hardhat run --network hardhat scripts/run.js",
+    "test:test": "hardhat test --network hardhat ./test/MultiSigWallet.js",
+    "test:localhost": "hardhat test --network localhost ./test/MultiSigWallet.js",
+    "test:sepolia": "hardhat test --network sepolia ./test/Test.js",
+    "deploy:localhost": "npx hardhat run --network localhost scripts/deploy.js",
+    "deploy:assetchain_test": "npx hardhat run --network assetchain_test scripts/deploy.js",
+    "deploy:sepolia": "npx hardhat run --network sepolia scripts/deploy.js",
+    "fork": "npx hardhat node --fork https://eth-sepolia.g.alchemy.com/v2/[API]"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-ignition": "^0.15.0",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "chai": "^4.2.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.22.4",
+    "hardhat-gas-reporter": "^1.0.8",
+    "solidity-coverage": "^0.8.0",
+    "typechain": "^8.3.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -60,15 +60,12 @@ contract MultiSigWallet {
         approvals[msg.sender][id] = true; // change id = true
         transfers[id].approvals++; // increment number of approvals
         
-        
         // if the transfer approval is equal or more than needed
         if(transfers[id].approvals >= quorum) {
             transfers[id].sent = true; // mark that transfer is sent
             address payable to = transfers[id].to; // send payment to address given
             uint amount = transfers[id].amount; // send amount provided
             to.transfer(amount); // transfer - 'tranfer' is a Solidity function
-            
-            
         }
     }
 

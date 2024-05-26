@@ -17,7 +17,7 @@ module.exports = {
     },
     sepolia: {
       url: process.env.SEPOLIA_RPC,
-      accounts: [PRIVATE_KEY_1]
+      accounts: [PRIVATE_KEY_1,PRIVATE_KEY_2,PRIVATE_KEY_3]
     },
     assetchain_test: {
       url: "https://rpctestnet.xendrwachain.com",

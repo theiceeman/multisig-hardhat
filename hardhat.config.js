@@ -8,7 +8,25 @@ const PRIVATE_KEY_3 = '0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.24",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.7",
+      },
+      {
+        version: "0.8.24",
+      },
+      {
+        version: "0.6.12",
+      },
+    ],
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
   networks: {
     hardhat: {},
     localhost: {
@@ -27,5 +45,20 @@ module.exports = {
       url: "https://eth-rinkeby.alchemyapi.io/v2/123abc123abc123abc123abc123abcde",
       accounts: [privateKey1, privateKey2, ...]
     } */
+  },
+  etherscan: {
+    apiKey: {
+      assetchain_test: "abc"
+    },
+    customChains: [
+      {
+        network: "assetchain_test",
+        chainId: 42421,
+        urls: {
+          apiURL: "http://scout.xendrwachain.com/api",
+          browserURL: "http://scout.xendrwachain.com/"
+        }
+      }
+    ]
   },
 };
